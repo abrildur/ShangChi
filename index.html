@@ -44,10 +44,19 @@
                     <p class="alte-bold" tabindex="2">Shang-Chi (Simu Liu) must confront the past he thought he left behind <br> when he is drawn into the web of the mysterious Ten Rings organization.</p>
                 </div>
             </div>
-            <!-- boton-->
-            <button class="uk-button uk-button-default" id="tickets">Buy Tickets</button>    
-            <button class="uk-button uk-button-default" id="trailer">Watch Trailer</button>                    
-        </div>
+            <!-- boton ticker-->
+            <button class="uk-button uk-button-default" type="button" id="tickets">Buy Tickets</button>    
+            <!-- boton trailer-->
+            <button class="uk-button uk-button-default" onclick="toggle();" id="trailer">Watch Trailer</button>                    
+            <div class="trailer">
+              <video src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" controls="true"></video>
+              <img src="img/close.png" onclick="toggle();" class="close">
+            </div>
+  <!--
+            <iframe src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
+
+-->
+          </div>
 
     </div>
 <!--seccion de sus vacaciones frontend -->
@@ -70,6 +79,12 @@
         </div>
     </div>-->
   </body>
+  <script type="text/javascript">
+      function toggle(){
+        var trailer = document.querySelector(".trailer")
+        trailer.classList.toggle("active")
+      }
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
