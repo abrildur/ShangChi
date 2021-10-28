@@ -18,7 +18,7 @@
             <nav class="uk-navbar-container" uk-navbar>
                 <div class="uk-navbar-left">
                     <ul class="uk-navbar-nav">
-                      <li class="uk-active alte-bold "><a href="index.html" class="inline uk-heading-primary"><img src="img/CINECLUB.png" alt="Logo CineClub" class="icono"></a></li>
+                      <li class="uk-active alte-bold "><a href="index.html" class="inline uk-heading-primary"><img src="img/CINECLUB.png" alt="Logo CineClub" class="icono"id="cineclub"></a></li>
                     </ul>
                 </div>
                   <div class="uk-navbar-right ">
@@ -31,13 +31,12 @@
                           </ul>
                   </div>
             </nav>
-        </div>
-
+        </div> 
         <div class=" uk-text-center " id="aboutme">
           <div class="container-offset">
             <div>
                 <img src="img/shangchilogo.png" alt="Shang Chi Logo" id="movielogo">
-            </div>
+            </div> 
         </div>
             <div class="uk-grid-match uk-child-width-1-1@m mens-welcome" uk-grid>
                 <div>
@@ -45,31 +44,50 @@
                 </div>
             </div>
             <!-- boton ticker-->
-            <button class="uk-button uk-button-default" type="button" id="tickets">Buy Tickets</button>    
+            <button class="uk-button uk-button-default" id="tickets">Buy Tickets</button>
             <!-- boton trailer-->
-            <a href="#" onclick="toggle();">Watch Trailer</a>
-            <button class="uk-button uk-button-default" onclick="toggle();" id="trailer">Watch Trailer</button>                    
-            <div class="trailer">
-              <video src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" controls="true"></video>
-              <img src="img/close.png" onclick="toggle();" class="close">
+            <button class="uk-button uk-button-default" id="trailer">Watch Trailer</button> 
+            <!--video-->                
+            <div class="trailer" id="videotrailer">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/v1EkoQV4g5c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <img src="img/close.png" id="close" class="close">
+              </div>
+              <!--schedule-->
+              <div class="horario">
+                <img src="img/Group 15.png" id="scheduleimg">
+                <img src="img/close.png" id="closeschedule" class="close">
             </div>
-  <!--
-            <iframe src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
-
--->
-          </div>
-
-    </div>
+          </div> 
+        </div>
   </body>
-  <script type="text/javascript">
+
+  <script>
+     document.getElementById("closeschedule").style.visibility='hidden';
+     document.getElementById("videotrailer").style.visibility='hidden';
+     document.getElementById("trailer").addEventListener("click", toggle);
+     document.getElementById("tickets").addEventListener("click", mep);
+     document.getElementById("scheduleimg").style.visibility='hidden';
+    /*funciones de boton video trailer*/
       function toggle(){
-        var trailer = document.querySelector(".trailer")
-        trailer.classList.toggle("active")
-        var video = document.querySelector("video")
-        trailer.classList.toggle("active");
-        video.pause();
-        video.currentTime = 0;
-      }
+            document.getElementById("videotrailer").style.visibility='visible';
+            document.getElementById("close").style.visibility='visible';
+            document.getElementById("close").addEventListener("click", closevideo);
+      };
+      function closevideo(){
+            document.getElementById("videotrailer").style.visibility='hidden';
+            document.getElementById("close").style.visibility='hidden';
+      };
+      /*funciones de boton ticket*/
+      function mep(){
+        document.getElementById("scheduleimg").style.visibility='visible';
+        document.getElementById("closeschedule").style.visibility='visible';
+        document.getElementById("closeschedule").addEventListener("click", cerrarhorario);
+      };
+      function cerrarhorario(){
+        document.getElementById("scheduleimg").style.visibility='hidden';
+        document.getElementById("closeschedule").style.visibility='hidden';
+      };
+
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
