@@ -79,7 +79,7 @@ button#trailer{
   outline: none;
 }
 .trailer.active{
-  visibility: hidden;
+  visibility: visible;
   opacity: 0;
 }
 .close {

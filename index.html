@@ -47,42 +47,27 @@
             <!-- boton ticker-->
             <button class="uk-button uk-button-default" type="button" id="tickets">Buy Tickets</button>    
             <!-- boton trailer-->
+            <a href="#" onclick="toggle();">Watch Trailer</a>
             <button class="uk-button uk-button-default" onclick="toggle();" id="trailer">Watch Trailer</button>                    
-            <div class="trailer">
-              <video src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" controls="true"></video>
-              <img src="img/close.png" onclick="toggle();" class="close">
-            </div>
   <!--
             <iframe src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" width="1920" height="1080" frameborder="0" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
 
 -->
           </div>
-
     </div>
-<!--seccion de sus vacaciones frontend -->
- <!--   <div class="uk-section about"id="hola">
-      <div class="uk-container" >
-
-        <h1 class="uk-heading-bullet" tabindex="3">My Frontend Vacation</h1>
-
-        <div class="uk-text-justify"  uk-grid>
-          <div class="uk-width-1-1@m" tabindex="3">
-              <p>During the summer of 2019, I decided to start learning frontend development, so during my journey, I was learning HTML, CSS, and JavaScript.</p>
-              <p>Every afternoon, after seeing new places on my vacation, I practiced my skills in frontend technologies, building this page. These are the courses I've been taking</p>
-              <ul>
-                <li tabindex="4">Professional Web Development Course</li>
-                <li tabindex="5">Course to create my first web page</li>
-              </ul>
-          </div>
-        </div>
-
-        </div>
-    </div>-->
+    <div class="trailer">
+      <video src="https://www.youtube.com/watch?v=8YjFbMbfXaQ" controls="true"></video>
+      <img src="img/close.png" onclick="toggle();" class="close">
+    </div>
   </body>
   <script type="text/javascript">
       function toggle(){
         var trailer = document.querySelector(".trailer")
         trailer.classList.toggle("active")
+        var video = document.querySelector("video")
+        trailer.classList.toggle("active");
+        video.pause();
+        video.currentTime = 0;
       }
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
